@@ -7,8 +7,8 @@ function mincost(arr)
     let totalCost = 0;
     arr.sort((a, b) => a - b);
 
-    arr.forEach(() => {
-        if (arr.length > 1) {
+
+        while(arr.length > 1) {
             const rope1 = arr.shift();
             const rope2 = arr.shift();
 			const cost = rope1 + rope2;
@@ -16,7 +16,7 @@ function mincost(arr)
             arr.push(cost);
             arr.sort((a, b) => a - b);
         }
-    });
+  
 
     return totalCost;
 }
